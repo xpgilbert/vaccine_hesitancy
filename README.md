@@ -1,6 +1,6 @@
 
 
-# Anxiety and Hesitancy 
+# Vaccine Hesitancy and General Anxiety
 ## Study of American perceptions during the Peak of the Pandemic
 
 # Table of contents
