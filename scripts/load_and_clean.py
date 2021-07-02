@@ -18,27 +18,6 @@ wave5 = pd.read_excel('data/All Results.xlsx', sheet_name='wave 5')
 wave6 = pd.read_excel('data/All Results.xlsx', sheet_name='wave 6')
 
 
-## Remove duplicates
-
-def remove_dup(wave, wave1=wave1):
-    ## Remove duplicates from wave1 from all waves
-    repeats = wave1[wave1['id'].duplicated()]['id']
-
-    ## Remove duplicates within the wave
-    wave_r = wave[wave['id'].duplicated()]['id']
-    repeats = repeats.append(wave_r)
-    wave = wave[~wave['id'].isin(repeats)]
-    return wave
-
-
-wave1 = remove_dup(wave1)
-wave2 = remove_dup(wave2)
-wave3 = remove_dup(wave3)
-wave4 = remove_dup(wave4)
-wave5 = remove_dup(wave5)
-wave6 = remove_dup(wave6)
-
-print('dups removed')
 ## Create function to extract US state from zipcode data
 
 from uszipcode import SearchEngine
@@ -135,7 +114,27 @@ def load_waves(waves):
             wave += 1
     return data
 
+## Remove duplicates
 
+def remove_dup(wave, wave1=wave1):
+    ## Remove duplicates from wave1 from all waves
+    repeats = wave1[wave1['id'].duplicated()]['id']
+
+    ## Remove duplicates within the wave
+    wave_r = wave[wave['id'].duplicated()]['id']
+    repeats = repeats.append(wave_r)
+    wave = wave[~wave['id'].isin(repeats)]
+    return wave
+
+
+wave1 = remove_dup(wave1)
+wave2 = remove_dup(wave2)
+wave3 = remove_dup(wave3)
+wave4 = remove_dup(wave4)
+wave5 = remove_dup(wave5)
+wave6 = remove_dup(wave6)
+
+print('dups removed')
 ## Lets get some data
 waves = [wave1, wave2, wave3, wave4, wave5, wave6]
 df = load_waves(waves)
