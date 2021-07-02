@@ -158,11 +158,6 @@ Lets first explore the relationship between our hesitancy classes and the median
 </p>
 
 Visually, it is hard to differentiate any class imbalance.  We would have to use more specific statistical tools to determine if there are differences between the classes.
-Lets now look at correlations between our time variables, 
-
-<p align="center">
-<img src="https://github.com/xpgilbert/vaccine_hesitancy/blob/master/plots/correlation_heatmap_time_data.png" />
-</p>
 
 We can also investigate how the classes are distributed geographically across the United States:
 
