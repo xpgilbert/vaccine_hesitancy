@@ -190,5 +190,5 @@ for col in ['life_med', 'anx_med', 'cov_med', 'vax_med', 'perc_med', 'm5']:
     df[col] = df[col].fillna(df[col].mean())
 
 ##  Save to csv file
-# df.to_csv('data/full_ucsd_data.csv',index=False)}
+df.to_csv('data/full_ucsd_data.csv',index=False)
 print('final shape:',df.shape)
